@@ -8,7 +8,7 @@
 
  ## Структура проекта 
  ```
-air-quality-app/
+Air_Quality/
 ├── app.py                  # Основной файл FastAPI-приложения
 ├── model_training.py       # Обучение LSTM-модели и генерация прогноза
 ├── parser.py       # Скрипт для сбора исторических данных о качестве воздуха
@@ -26,8 +26,8 @@ air-quality-app/
 
 ### 1. Клонирование репозитория 
 ```bash
-git clone https://github.com/your-username/air-quality-app.git
-cd air-quality-app
+git clone https://github.com/your-username/Air_Quality.git
+cd Air_Quality
  ```
  
 ### 2. Установка зависимостей 
