@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather & Air Pollution</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Weather & Air Pollution App</h1>
+        <form method="post">
+    <input type="text" name="city" placeholder="Enter city name" required>
+    <button type="submit">Search</button>
+        </form>
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+
+        {% if temp %}
+            <div class="weather">
+                <h2>Weather in {{ city }}</h2>
+                <p>{{ temp }}°C, {{ description }}</p>
+                <img src="{{ icon_url }}" alt="Weather Icon">
+            </div>
+        {% endif %}
+
+        {% if aqi %}
+            <div class="pollution">
+                <h2>Air Quality</h2>
+                <p>AQI: {{ aqi }} ({{ aqi_class }})</p>
+                <ul>
+                    <li>PM2.5: {{ pollutants.pm2_5 }} µg/m³</li>
+                    <li>PM10: {{ pollutants.pm10 }} µg/m³</li>
+                    <li>NO₂: {{ pollutants.no2 }} µg/m³</li>
+                    <li>SO₂: {{ pollutants.so2 }} µg/m³</li>
+                    <li>CO: {{ pollutants.co }} µg/m³</li>
+                </ul>
+            </div>
+        {% endif %}
+        {% if forecast_html %}
+    <div class="forecast">
+        <h2>Прогноз качества воздуха на 7 дней</h2>
+        {{ forecast_html | safe }}
+    </div>
+{% endif %}
+    </div>
+</body>
+</html>
