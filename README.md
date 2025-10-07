@@ -41,7 +41,7 @@ source venv/bin/activate  # Linux/macOS
 venv\Scripts\activate     # Windows
  ```
 
-####Установите зависимости: 
+#### Установите зависимости: 
 ```bash
 pip install -r requirements.txt
 ```
